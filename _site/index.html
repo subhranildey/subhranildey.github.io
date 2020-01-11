@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <title>Igor Cicimov – DevOps at Encompass</title>
+
+        <meta charset="utf-8">
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    
+    <meta name="description" content="DevOps at Encompass">
+    <meta property="og:description" content="DevOps at Encompass">
+    
+    <meta name="author" content="Igor Cicimov">
+
+    
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <link rel="alternate" type="application/rss+xml" title="Igor Cicimov - DevOps at Encompass" href="/feed.xml">
+
+    <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
+    <!-- Begin Jekyll SEO tag v2.0.0 -->
+<title>Igor Cicimov - DevOps at Encompass</title>
+<meta property="og:title" content="Igor Cicimov">
+<meta name="description" content="DevOps at Encompass">
+<meta property="og:description" content="DevOps at Encompass">
+<link rel="canonical" href="https://icicimov.github.io/">
+<meta property="og:url" content="https://icicimov.github.io/">
+<meta property="og:site_name" content="Igor Cicimov">
+<link rel="next" href="https://icicimov.github.io/page2/">
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Igor Cicimov",
+    "headline": "Igor Cicimov",
+    "description": "DevOps at Encompass",
+    "url": "https://icicimov.github.io/"
+  }
+</script>
+<!-- End Jekyll SEO tag -->
+  </head>
+
+  <body>
+    <div class="wrapper-masthead">
+      <div class="container">
+        <header class="masthead clearfix">
+          <a href="/" class="site-avatar"><img src="https://raw.githubusercontent.com/barryclark/jekyll-now/master/images/jekyll-logo.png"></a>
+
+          <div class="site-info">
+            <h1 class="site-name"><a href="/">Igor Cicimov</a></h1>
+            <p class="site-description">DevOps at Encompass</p>
+          </div>
+
+          <nav>
+            <a href="/">Blog</a>
+            <a href="/about">About</a>
+          </nav>
+        </header>
+      </div>
+    </div>
+
+    <div id="main" role="main" class="container">
+      <div style="display:inline-block;margin-left:.5em;">
+    Browse by <a href="/category/">Category</a>, <a href="/tag/">Tag</a> or <a href="/archive/">Archive</a>
+</div>
+
+<br><br>
+
+<div class="posts">
+   
+
+    <nav id="pagination">
+        
+
+         
+          <a href="/page2/">»</a>
+         
+    </nav>
+
+    <article class="post">
+
+      <h1><a href="/Tomcat9-ECDSA-Certificates-and-HTTP2/">Tomcat9, ECDSA/ECC (Elliptic Curve) Certificates and HTTP/2</a></h1>
+        <span class="post-date">
+            04 Apr 2016
+            
+            |
+            
+            <a class="post-tag codinfox-tag-mark" href="/tag/#tomcat">tomcat</a>
+            
+            <a class="post-tag codinfox-tag-mark" href="/tag/#ssl">ssl</a>
+            
+            <a class="post-tag codinfox-tag-mark" href="/tag/#http2">http2</a>
+            
+            
+	</span>
+
+      <div class="entry">
+        <p>Tomcat9 brings bunch of new features of which support for HTTP/2 and multiple certificates per Virtual Host via SNI extension are most important ones. This needs Java 1.8, the latest APR/TC (Tomcat Native) release 1.2.x, since SNI support in current Java 1.8 is useless, which in turn requires OpenSSL version 1.0.2g installed. Early users of HTTP/2, according to one of the main Tomcat developers Mark Thomas, reported improvement of up to 20% in page speed due to its benefits like multiplexing, header compression and server push (servlet 4.0 API needed). By default HTTP/2 (h2) protocol is SSL, as expected the whole internet to be over https only in near future, but there is a clear-text version as well called h2c.</p>
+
+      </div>
+
+      <a href="/Tomcat9-ECDSA-Certificates-and-HTTP2/" class="read-more">Read More</a>
+    </article>
+   
+
+    <nav id="pagination">
+        
+
+         
+          <a href="/page2/">»</a>
+         
+    </nav>
+
+    <article class="post">
+
+      <h1><a href="/ActiveMQ-Master-Slave-KahaDB-on-OCFS2-shared-file-system/">ActiveMQ Master/Slave KahaDB on OCFS2 shared file system</a></h1>
+        <span class="post-date">
+            18 Mar 2016
+            
+            |
+            
+            <a class="post-tag codinfox-tag-mark" href="/tag/#activemq">activemq</a>
+            
+            <a class="post-tag codinfox-tag-mark" href="/tag/#ocfs2">ocfs2</a>
+            
+            
+	</span>
+
+      <div class="entry">
+        <p>During my tests of shared storage clusters I wondered if ActiveMQ supports file locking on OCFS2 file system which I used on couple of occasions. While looking into it I came accross the following warning on the <a href="http://activemq.apache.org/shared-file-system-master-slave.html">Apache project site</a>:</p>
+
+      </div>
+
+      <a href="/ActiveMQ-Master-Slave-KahaDB-on-OCFS2-shared-file-system/" class="read-more">Read More</a>
+    </article>
+   
+
+    <nav id="pagination">
+        
+
+         
+          <a href="/page2/">»</a>
+         
+    </nav>
+
+    <article class="post">
+
+      <h1><a href="/HAProxy-dynamically-adjust-server-weight-using-external-agent/">HAProxy dynamically adjust server weight using external agent</a></h1>
+        <span class="post-date">
+            13 Oct 2015
+            
+            |
+            
+            <a class="post-tag codinfox-tag-mark" href="/tag/#haproxy">haproxy</a>
+            
+            
+	</span>
+
+      <div class="entry">
+        <p>Trying to utilize HAProxy-1.5/1.6 <code>agent-check</code> feature, see <a href="http://cbonte.github.io/haproxy-dconv/configuration-1.5.html#5.2-agent-check">HAProxy documentation</a>, I wrote this small script to check Tomcat system load and return back some values that HAP can use to dynamically adjust the server weight in the backend.</p>
+
+      </div>
+
+      <a href="/HAProxy-dynamically-adjust-server-weight-using-external-agent/" class="read-more">Read More</a>
+    </article>
+  
+</div>
+
+<div class="pagination">
+    
+    <a class="pagination-item older" href="/page2">Older</a>
+    
+    
+    <span class="pagination-item newer">Newer</span>
+    
+</div>
+
+    </div>
+
+    <div class="wrapper-footer">
+      <div class="container">
+        <footer class="footer">
+          
+<a href="mailto:igorc@encompasscorporation.com"><i class="svg-icon email"></i></a>
+
+
+<a href="https://github.com/icicimov/jekyll-now"><i class="svg-icon github"></i></a>
+
+<a href="https://www.linkedin.com/in/igorcicimov"><i class="svg-icon linkedin"></i></a>
+
+
+<a href="https://www.twitter.com/icicimov"><i class="svg-icon twitter"></i></a>
+
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+  </body>
+</html>
