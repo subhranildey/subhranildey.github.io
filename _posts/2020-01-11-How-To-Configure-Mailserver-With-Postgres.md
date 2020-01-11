@@ -14,7 +14,7 @@ published: true
 #### Install Requied Packages
  
  ```
-apt -y install dovecot-core dovecot-pop3d dovecot-imapd dovecot-pgsql dovecot-lmtpd
+ apt -y install dovecot-core dovecot-pop3d dovecot-imapd dovecot-pgsql dovecot-lmtpd
  apt -y install postfix postfix-pgsql
  apt -y install postgresql-11 postgresql-client-11
  apt -y install certbot
@@ -51,4 +51,5 @@ chmod 2770 /var/vmail/
  * Update variables in `config.sh`
 ```
 sh config.sh
+
 ```
