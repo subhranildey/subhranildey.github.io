@@ -1,5 +1,7 @@
 ---
+
 title: Mailserver with Postgres
+
 published: true
 ---
 
@@ -23,15 +25,16 @@ published: true
 #### Clone the Repo & Initialise DB
 
 ```
-git clone git@gitlab.com:yukthi-mail-v2-devs/yukthi-mail-v2.git
-cd  yukthi-mail-v2/postgres
-sudo chown postgres:postgres init-user-db.sh
-sudo cp init-user-db.sh /var/lib/postgresql
-sh init-user-db.sh
+ git clone git@gitlab.com:yukthi-mail-v2-devs/yukthi-mail-v2.git
+ cd  yukthi-mail-v2/postgres
+ sudo chown postgres:postgres init-user-db.sh
+ sudo cp init-user-db.sh /var/lib/postgresql
+ sh init-user-db.sh
 ```
 * Use `dbdump.sql` to import database
 
 ### Configure SSL
+
 
  ```
  certbot certonly --standalone -d $(hostname -f)
@@ -49,6 +52,7 @@ chmod 2770 /var/vmail/
 ### Steps to setup Postfix & Dovecot
 
  * Update variables in `config.sh`
+
 ```
 sh config.sh
 
