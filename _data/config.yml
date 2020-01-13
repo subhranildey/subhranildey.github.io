@@ -19,7 +19,7 @@ article:
     path: "images"
     suffix: ""
 google_analytics:
-  code: "UA-155162630-1"
+  code: ""
 disqus_name: "glegoux-com"
 libs:
   version:
