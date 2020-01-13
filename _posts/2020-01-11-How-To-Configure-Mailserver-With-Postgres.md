@@ -1,6 +1,6 @@
 ---
-title: "Mailserver "
-description: "mailserver is ."
+title: "How to configure mail server with Postgres"
+description: "Mailserver"
 authors: ["subhranildey"]
 time_reading_minutes: "10"
 category: "Linux"
