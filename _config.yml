@@ -4,7 +4,7 @@
 
 # Server
 
-url: "https://glegoux.com"
+#url: "https://glegoux.com"
 baseurl: ""
 detach: false
 show_dir_listing: false
