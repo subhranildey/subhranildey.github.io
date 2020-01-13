@@ -1,5 +1,5 @@
 ---
-title: "Mailserver "
+title: "How to configure mail server with Postgres"
 description: "Mailserver"
 authors: ["subhranildey"]
 time_reading_minutes: "10"
