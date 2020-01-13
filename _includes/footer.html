@@ -1,0 +1,73 @@
+<div class="container">
+  <div class="row">
+    <div class="contact col-md-4 col-12">
+      <table>
+        <tr>
+          <td colspan="2">
+            <h1>Contact</h1>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <a class="link-strong" href="/contact">
+              <i class="icon fas fa-address-card"></i>
+            </a>
+          </td>
+          <td>
+            <a class="link-strong" href="/contact">
+              Contact
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <a class="link-strong" href="/about">
+              <i class="icon fas fa-user"></i>
+            </a>
+          </td>
+          <td>
+            <a class="link-strong" href="/about">
+              About
+            </a>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="language col-md-4 col-12">
+      <table>
+        <tr>
+          <td>
+            <h1>Language</h1>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            {% include lang.html %}
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="follow col-md-4 col-12">
+      <h1 class="title">Follow me</h1>
+      {% include social.html %}
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="copyright col-12">
+      <hr>
+
+      <p>
+        glegoux.com - ©Copyright {{ 'now' | date: "%Y" }}.<br>
+        <a class="link-strong" href="{{ site.data.links.status }}">Status & Availability</a> |
+        <a class="link-strong" href="{{ site.data.links.code }}">Source code</a> |
+        <a class="link-strong" href="/sitemap.xml">Sitemap</a>
+        <br>
+        Version: {% include VERSION %}
+      </p>
+    </div>
+  </div>
+
+</div>

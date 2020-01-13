@@ -1,0 +1,191 @@
+<!-- Google Translate -->
+<div id="google-translate"></div>
+
+<script async
+        type="text/javascript"
+        src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+</script>
+
+<script defer type="text/javascript">
+
+    let originalLanguageCode = '{{ site.data.config.lang.original.code }}';
+    let includedLanguageCodes = originalLanguageCode + ',' + '{{ site.data.config.lang.others | map: "code" | uniq | join: "," }}';
+
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+            {
+                pageLanguage: originalLanguageCode,
+                includedLanguages: includedLanguageCodes,
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                autoDisplay: false
+            },
+            'google-translate'
+        );
+    }
+
+    jQuery(document).ready(function () {
+
+        let LANGUAGES = {
+            "af": "afrikaans",
+            "sq": "albanian",
+            "ar": "arabic",
+            "az": "azerbaijani",
+            "eu": "basque",
+            "bn": "bengali",
+            "be": "belarusian",
+            "bg": "bulgarian",
+            "ca": "catalan",
+            "zh-CN": "chinese (simplified)",
+            "zh-TW": "chinese (traditional)",
+            "hr": "croatian",
+            "cs": "czech",
+            "da": "danish",
+            "nl": "dutch",
+            "en": "english",
+            "eo": "esperanto",
+            "et": "estonian",
+            "tl": "filipino",
+            "fi": "finnish",
+            "fr": "french",
+            "gl": "galician",
+            "ka": "georgian",
+            "de": "german",
+            "el": "greek",
+            "gu": "gujarati",
+            "ht": "haitian",
+            "iw": "hebrew",
+            "hi": "hindi",
+            "hu": "hungarian",
+            "is": "icelandic",
+            "id": "indonesian",
+            "ga": "irish",
+            "it": "italian",
+            "ja": "japanese",
+            "kn": "kannada",
+            "ko": "korean",
+            "la": "latin",
+            "lv": "latvian",
+            "lt": "lithuanian",
+            "mk": "macedonian",
+            "ms": "malay",
+            "mt": "maltese",
+            "no": "norwegian",
+            "fa": "persian",
+            "pl": "polish",
+            "pt": "portuguese",
+            "ro": "romanian",
+            "ru": "russian",
+            "sr": "serbian",
+            "sk": "slovak",
+            "sl": "slovenian",
+            "es": "spanish",
+            "sw": "swahili",
+            "sv": "swedish",
+            "ta": "tamil",
+            "te": "telugu",
+            "th": "thai",
+            "tr": "turkish",
+            "uk": "ukrainian",
+            "ur": "urdu",
+            "vi": "vietnamese",
+            "cy": "welsh",
+            "yi": "yiddish"
+        };
+
+        let originalLanguage = LANGUAGES[originalLanguageCode];
+        let originalLangHeader = $("#original-lang");
+        let langs = $(".lang");
+
+        function googleTranslate(language) {
+            $('.goog-te-menu-frame').contents().find("a.goog-te-menu2-item").each(function () {
+                if ($(this).text().toLowerCase().includes(language.toLowerCase())) {
+                    $(this)[0].click();
+                }
+            });
+        }
+
+        function changeLanguage(languageCode) {
+            let language = LANGUAGES[languageCode];
+            console.log(languageCode, language);
+            if (originalLanguage === language) {
+                originalLangHeader.hide();
+            } else {
+                originalLangHeader.show();
+            }
+            langs.each(function () {
+                $(this).find('option').each(function () {
+                    if ($(this).val() === languageCode) {
+                        $(this).attr('selected', true)
+                    }
+                });
+            });
+            // Called twice
+            googleTranslate(language);
+            googleTranslate(language);
+            window.localStorage.setItem('language-code', languageCode);
+        }
+
+        // init translation
+
+        let currentLanguageCode = window.localStorage.getItem('language-code');
+        if (currentLanguageCode === null) {
+            currentLanguageCode = originalLanguageCode;
+            let browserLanguageCode = navigator.language.substring(0, 2);
+            includedLanguageCodes.split(',').forEach(function (languageCode) {
+                if (languageCode.startsWith(browserLanguageCode)) {
+                    currentLanguageCode = browserLanguageCode;
+                }
+            });
+        }
+        changeLanguage(currentLanguageCode);
+
+        // update translation
+
+        langs.change(function () {
+            let languageCode = $(this).children("option:selected").val();
+            changeLanguage(languageCode);
+        });
+
+        // no translate
+
+        setTimeout(function () {
+            for (const jax of MathJax.Hub.getAllJax()) {
+                jax.SourceElement().previousSibling.classList.add("notranslate");
+            }
+            $(".highlight").addClass("notranslate");
+        }, 1000);
+
+    });
+</script>
+
+<style type="text/css">
+  body {
+    top: 0 !important;
+  }
+
+  #lang {
+    display: none !important;
+  }
+
+  .goog-te-banner-frame.skiptranslate {
+    display: none !important;
+  }
+
+  .goog-tooltip {
+    display: none !important;
+  }
+
+  .goog-tooltip:hover {
+    display: none !important;
+  }
+
+  .goog-text-highlight {
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  .goog-te-gadget {
+    display: none !important;
+  }
+</style>

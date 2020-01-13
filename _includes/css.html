@@ -1,0 +1,17 @@
+{%- assign libs_version = site.data.config.libs.version -%}
+<!-- Third-party CSS -->
+<link
+  href="/static/libs/bootstrap/{{ libs_version.bootstrap }}/css/bootstrap.min.css"
+  rel="stylesheet" type="text/css"/>
+<link
+  href="/static/libs/font-awesome/{{ libs_version.font-awesome }}/css/all.min.css"
+  rel="stylesheet" type="text/css"/>
+<!-- Local CSS -->
+<link href="/static/css/main.css" rel="stylesheet" type="text/css"/>
+{%- if page.article -%}
+<link href="/static/css/article.css" rel="stylesheet" type="text/css"/>
+{%- elsif page.articles -%}
+<link href="/static/css/articles.css" rel="stylesheet" type="text/css"/>
+{%- else -%}
+<link href="/{{ page.path | replace: '.html', '.css' }}" rel="stylesheet" type="text/css"/>
+{%- endif -%}
