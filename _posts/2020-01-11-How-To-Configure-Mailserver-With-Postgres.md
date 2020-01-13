@@ -1,6 +1,6 @@
 ---
 title: "Mailserver "
-description: "mailserver is ."
+description: "Mailserver"
 authors: ["subhranildey"]
 time_reading_minutes: "10"
 category: "Linux"
