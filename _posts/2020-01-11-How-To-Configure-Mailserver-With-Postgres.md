@@ -1,4 +1,11 @@
-# ymail-v2
+---
+title: "Mailserver "
+description: "mailserver is ."
+authors: ["subhranildey"]
+time_reading_minutes: "10"
+category: "Linux"
+tags: ["Markdown"]
+---
 
 ## Mail stack:
  - Postfix (SMTP)
